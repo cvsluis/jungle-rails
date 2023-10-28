@@ -1,5 +1,14 @@
 
 <header class="<%= current_page?(root_path) ? "hero" : "hero small" %>">
+  <div class="d-flex flex-row align-self-end align-items-baseline pt-3 pe-3">
+    <% if current_user %>
+      <p class="text-light me-3">Welcome back, <%= current_user.name %>!</p>
+      <button type="button" class="btn btn-light"><%= link_to 'Logout', '/logout', class: "text-dark text-decoration-none" %></button>
+    <% else %>
+      <button type="button" class="btn btn-light me-3"><%= link_to 'Login', '/login', class: "text-dark text-decoration-none" %></button>
+      <button type="button" class="btn btn-success"><%= link_to 'Signup', '/signup', class: "text-light text-decoration-none" %></button>
+    <% end %>
+  </div>
   <section class="title">
     <h3>Welcome to</h3>
     <h1>The Jungle</h1>
