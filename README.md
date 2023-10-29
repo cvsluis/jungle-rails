@@ -2,6 +2,42 @@
 
 A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
 
+## Purpose
+This project was built as a part of our learnings at [Lighthouse Labs](https://www.lighthouselabs.ca).
+
+## Final Product
+**View of Home Page for Logged in User**
+!["View of Home Page for Logged in User"](docs/images/home_page.png)
+
+**View of Individual Product for Visitor**
+!["View of Individual Product for Visitor"](docs/images/product_view.png)
+
+**View of Sign Up Page**
+!["View of Sign Up Page"](docs/images/sign_up.png)
+
+**View of Admin Products Page**
+!["View of Admin Products Page"](docs/images/admin_products.png)
+
+**View of Stripe Checkout**
+!["View of Stripe Checkout"](docs/images/stripe_checkout.png)
+
+## Features
+**View Products**
+- See all products in inventory
+- Search products by category
+- Click on a product to view more details
+
+**My Cart**
+- Add and remove products to cart
+- Detailed view of order
+- Simple checkout using Stripe
+
+**Admin Dashboard**
+- View and update all products
+- View and update all categories
+- Get overview of products and categories on dashboard
+
+
 ## Setup
 
 1. Run `bundle install` to install dependencies
