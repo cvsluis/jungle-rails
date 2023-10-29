@@ -43,11 +43,23 @@
             <%# Categories %>
           <%# </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown"> %>
-            <% Category.all.each do |category| %>
-            <li class="nav-item">
-              <%= link_to category.name, category, class: "nav-link" %>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownAdmin"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Categories
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <% Category.all.each do |category| %>
+                  <%= link_to category.name, category, class: "nav-link" %>
+                <% end %>
+              </ul>
             </li>
-            <% end %>
           <%# </ul>
         </li> %>
       </ul>
