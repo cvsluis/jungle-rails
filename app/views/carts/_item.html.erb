@@ -10,7 +10,7 @@
     <div style="display: flex; flex-direction: column;">
       <% if active_sale? %>
         <s style=""><%= humanized_money_with_symbol product.price %></s>
-        <span style="color: red"><%= humanized_money_with_symbol price_with_discount(product.price) %></span>
+        <span style="color: tomato"><%= humanized_money_with_symbol price_with_discount(product.price) %></span>
       <% else %>
         <span><%= humanized_money_with_symbol product.price %></span>
       <% end %>
@@ -27,7 +27,7 @@
     <div style="display: flex; flex-direction: column;">
       <% if active_sale? %>
         <s><%= humanized_money_with_symbol product.price * quantity %></s>
-        <span style="color: red"><%= humanized_money_with_symbol price_with_discount(product.price) * quantity %></span>
+        <span style="color: tomato"><%= humanized_money_with_symbol price_with_discount(product.price) * quantity %></span>
       <% else %>
         <%= humanized_money_with_symbol product.price * quantity %>
       <% end %>

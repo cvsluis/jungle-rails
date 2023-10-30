@@ -6,7 +6,7 @@
       <div>
         <% if active_sale? %>
           <s style="font-size: 0.5em; margin-right: 1em;"><%= humanized_money_with_symbol product.price %></s>
-          <span style="color: red"><%= humanized_money_with_symbol price_with_discount(product.price) %></span>
+          <span style="color: tomato"><%= humanized_money_with_symbol price_with_discount(product.price) %></span>
         <% else %>
           <span><%= humanized_money_with_symbol product.price %></span>
         <% end %>

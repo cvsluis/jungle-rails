@@ -13,14 +13,13 @@
 
   <%= render 'layouts/top_nav' %>
 
+  <% if active_sale? %>
+    <div class="ps-5" style="background-color: tomato; padding: 1rem">
+      <span class="ps-5">There is an active <%= current_sale.name %> going on right now! <strong>Everything is <%= current_sale.percent_off %>% off!</strong></span>
+    </div>
+  <% end %>
+
   <main class="container">
-
-    <% if active_sale? %>
-      <div class="alert alert-warning mt-5">
-        There is an active <%= current_sale.name %> going on right now! <strong>Everything is <%= current_sale.percent_off %>% off!</strong>
-      </div>
-    <% end %>
-
     <%= yield %>
   </main>
 
