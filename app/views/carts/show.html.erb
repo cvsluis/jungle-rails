@@ -32,7 +32,14 @@
             TOTAL:
           </th>
           <th>
-            <%= humanized_money_with_symbol cart_subtotal_cents / 100.0 %>
+            <div style="display: flex; flex-direction: column;">
+              <% if active_sale? %>
+                <s><%= humanized_money_with_symbol cart_subtotal_cents / 100.0 %></s>
+                <span style="color: red"><%= humanized_money_with_symbol price_with_discount(cart_subtotal_cents) / 100.0 %></span>
+              <% else %>
+                <%= humanized_money_with_symbol cart_subtotal_cents / 100.0 %>
+              <% end %>
+            </div>
           </th>
         </tr>
       </tfoot>
@@ -45,7 +52,7 @@
         <script
           src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-amount="<%= cart_subtotal_cents %>"
+          data-amount="<%= active_sale? ? price_with_discount(cart_subtotal_cents) : cart_subtotal_cents %>"
           data-name="Jungle"
           data-description="Khurram Virani's Jungle Order"
           data-locale="auto"
