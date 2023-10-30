@@ -34,10 +34,10 @@
           <th>
             <div style="display: flex; flex-direction: column;">
               <% if active_sale? %>
-                <s><%= humanized_money_with_symbol cart_subtotal_cents / 100.0 %></s>
-                <span style="color: tomato"><%= humanized_money_with_symbol price_with_discount(cart_subtotal_cents) / 100.0 %></span>
+                <s><%= humanized_money_with_symbol cart_subtotal_cents.floor / 100.0 %></s>
+                <span style="color: tomato"><%= humanized_money_with_symbol price_with_discount(cart_subtotal_cents).floor / 100.0 %></span>
               <% else %>
-                <%= humanized_money_with_symbol cart_subtotal_cents / 100.0 %>
+                <%= humanized_money_with_symbol cart_subtotal_cents.floor / 100.0 %>
               <% end %>
             </div>
           </th>
