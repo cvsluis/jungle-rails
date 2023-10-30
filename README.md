@@ -9,11 +9,11 @@ This project was built as a part of our learnings at [Lighthouse Labs](https://w
 **View of Home Page for Logged in User**
 !["View of Home Page for Logged in User"](docs/images/home_page.png)
 
-**View of Individual Product for Visitor**
-!["View of Individual Product for Visitor"](docs/images/product_view.png)
+**View of Individual Product with Active Sale**
+!["View of Individual Product on Active Sale"](docs/images/product_sale.png)
 
-**View of Sign Up Page**
-!["View of Sign Up Page"](docs/images/sign_up.png)
+**View of Sign Up Page for Visitor**
+!["View of Sign Up Page for Visitor"](docs/images/sign_up.png)
 
 **View of Admin Products Page**
 !["View of Admin Products Page"](docs/images/admin_products.png)
@@ -36,6 +36,11 @@ This project was built as a part of our learnings at [Lighthouse Labs](https://w
 - View and update all products
 - View and update all categories
 - Get overview of products and categories on dashboard
+
+**Manage Discounts**
+- Admin access to sale management
+- Create, update or delete sale
+- Customize by choosing name, dates, and percent off
 
 
 ## Setup
