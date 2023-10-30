@@ -32,10 +32,10 @@ This project was built as a part of our learnings at [Lighthouse Labs](https://w
 - Detailed view of order
 - Simple checkout using Stripe
 
-**Admin Dashboard**
+**Organize Products and Categories**
 - View and update all products
 - View and update all categories
-- Get overview of products and categories on dashboard
+- Get overview of products, categories, and active sales on dashboard
 
 **Manage Discounts**
 - Admin access to sale management
