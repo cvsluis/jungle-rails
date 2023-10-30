@@ -5,21 +5,38 @@
   </header>
 
   <div style="display: flex; gap: 40px;">
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h4 class="card-title">Products</h4>
-      <h2><%= @total_products %></h2>
-      <div class="well">
-        <%= link_to 'All Products', [:admin, :products], class: 'btn btn-info' %>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h4 class="card-title">Products</h4>
+        <h2><%= @total_products %></h2>
+        <div class="well">
+          <%= link_to 'All Products', [:admin, :products], class: 'btn btn-info' %>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h4 class="card-title">Categories</h4>
-      <h2><%= @total_categories %></h2>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h4 class="card-title">Categories</h4>
+        <h2><%= @total_categories %></h2>
+        <div class="well">
+          <%= link_to 'All Categories', [:admin, :categories], class: 'btn btn-info' %>
+        </div>
+      </div>
     </div>
-  </div>
+
+    <% if active_sale? %>
+      <div class="card" style="width: 24rem;">
+        <div class="card-body">
+          <h4 class="card-title">Current Discounts Applied</h4>
+          <h5><%= current_sale.name %></h5>
+          <h6><%= current_sale.percent_off %>% off</h6>
+          <h6>Expires in: <%= distance_of_time_in_words_to_now(current_sale.ends_on) %></h6>
+          <div class="well">
+            <%= link_to 'All Sales', [:admin, :sales], class: 'btn btn-info' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </section>
