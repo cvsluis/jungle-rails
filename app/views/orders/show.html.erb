@@ -30,7 +30,12 @@
             TOTAL:
           </th>
           <th>
-            <%= humanized_money_with_symbol @order.total_cents / 100.0 %>
+            <% if active_sale? %>
+              <s><%= humanized_money_with_symbol @order.total_cents.floor / 100.0 %></s>
+              <span style="color: tomato"><%= humanized_money_with_symbol price_with_discount(@order.total_cents).floor / 100.0 %></span>
+            <% else %>
+              <%= humanized_money_with_symbol @order.total_cents.floor / 100.0 %>
+            <% end %>
           </th>
         </tr>
       </tfoot>
