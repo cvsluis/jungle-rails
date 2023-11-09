@@ -16,5 +16,18 @@ RSpec.describe User, type: :model do
       @user.password_confirmation = 'darcylover'
       expect(@user).not_to be_valid
     end
+
+    it "is not valid when password and password_confirmation fields do not match" do
+      @user.password_confirmation = 'darcylover'
+      expect(@user).not_to be_valid
+    end
+
+    it "is not valid when first name, last name or email are not filled" do
+      @user.first_name = nil
+      @user.last_name = nil
+      @user.email  = nil
+      expect(@user).not_to be_valid
+    end
+
   end
 end
