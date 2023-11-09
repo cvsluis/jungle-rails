@@ -10,23 +10,31 @@ RSpec.describe User, type: :model do
     it "must be created with a password and password_confirmation fields" do
       @user.password = nil
       expect(@user).not_to be_valid
+      expect(@user.errors.full_messages).to include("Password can't be blank")
     end
 
     it "is not valid when password and password_confirmation fields do not match" do
       @user.password_confirmation = 'darcylover'
       expect(@user).not_to be_valid
+      expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
     end
 
-    it "is not valid when password and password_confirmation fields do not match" do
-      @user.password_confirmation = 'darcylover'
-      expect(@user).not_to be_valid
-    end
-
-    it "is not valid when first name, last name or email are not filled" do
+    it "is not valid when first name is not filled" do
       @user.first_name = nil
+      expect(@user).not_to be_valid
+      expect(@user.errors.full_messages).to include("First name can't be blank")
+    end
+
+    it "is not valid when last name is not filled" do
       @user.last_name = nil
+      expect(@user).not_to be_valid
+      expect(@user.errors.full_messages).to include("Last name can't be blank")
+    end
+
+    it "is not valid when email is not filled" do
       @user.email  = nil
       expect(@user).not_to be_valid
+      expect(@user.errors.full_messages).to include("Email can't be blank")
     end
 
   end
