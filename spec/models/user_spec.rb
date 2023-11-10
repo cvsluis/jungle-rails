@@ -66,6 +66,16 @@ RSpec.describe User, type: :model do
       auth_user = User.authenticate_with_credentials('fitz@darcy.com', 'lizzylOver')
       expect(auth_user).to eq(nil)
     end
-    
+
+    it "is valid when email has spaces around it" do
+      auth_user = User.authenticate_with_credentials(' fitz@darcy.com  ', 'lizzyluver')
+      expect(auth_user).to eq(@user)
+    end
+
+    it "is valid when email has spaces around it" do
+      auth_user = User.authenticate_with_credentials('FITZ@darcy.com', 'lizzyluver')
+      expect(auth_user).to eq(@user)
+    end
+
   end
 end
